@@ -1,0 +1,11 @@
+/.idea/
+/cache/
+/src/
+
+/*.iml
+/*.md
+/composer.*
+/coverage.xml
+/LICENSE
+/phpunit.xml.dist
+/travis*
