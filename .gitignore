@@ -8,4 +8,4 @@
 /coverage.xml
 /LICENSE
 /phpunit.xml.dist
-/travis*
+/.travis*
