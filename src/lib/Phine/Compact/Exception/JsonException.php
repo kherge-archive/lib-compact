@@ -3,14 +3,23 @@
 namespace Phine\Compact\Exception;
 
 if (!defined('JSON_ERROR_RECURSION')) {
+    /**
+     * One or more recursive references in the value to be encoded.
+     */
     define('JSON_ERROR_RECURSION', 6);
 }
 
 if (!defined('JSON_ERROR_INF_OR_NAN')) {
+    /**
+     * One or more NAN or INF values in the value to be encoded .
+     */
     define('JSON_ERROR_INF_OR_NAN', 7);
 }
 
 if (!defined('JSON_ERROR_UNSUPPORTED_TYPE')) {
+    /**
+     * A value of a type that cannot be encoded was given.
+     */
     define('JSON_ERROR_UNSUPPORTED_TYPE', 8);
 }
 
@@ -41,7 +50,7 @@ class JsonException extends CompactException
         JSON_ERROR_SYNTAX => 'Syntax error.',
         JSON_ERROR_UTF8 => 'Malformed UTF-8 characters, possibly incorrectly encoded.',
         JSON_ERROR_RECURSION => 'One or more recursive references in the value to be encoded.',
-        JSON_ERROR_INF_OR_NAN => 'One or more NAN or INF values in the value to be encoded .',
+        JSON_ERROR_INF_OR_NAN => 'One or more NAN or INF values in the value to be encoded.',
         JSON_ERROR_UNSUPPORTED_TYPE => 'A value of a type that cannot be encoded was given.',
     );
 
