@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<phpdoc>
+  <files>
+    <directory>../lib-compact/src/lib</directory>
+    <directory>../lib-compact/src/vendors/phine/exception</directory>
+    <ignore>*/test/*</ignore>
+    <ignore>*/tests/*</ignore>
+  </files>
+  <parser>
+    <target>cache</target>
+  </parser>
+  <title>Compact API</title>
+  <transformations>
+    <template name="clean"/>
+  </transformations>
+  <transformer>
+    <target>.</target>
+  </transformer>
+</phpdoc>
+
+
