@@ -35,7 +35,11 @@ use Phine\Compact\Json;
 
 $compactor = new Json();
 
-echo $compactor->compactContents('example.json');
+echo $compactor->compactFile('example.json');
+
+// which is also the same as
+
+echo $compactor->compactContents(file_get_contents('example.json'));
 ```
 
 Assuming we had this in `example.json`:
@@ -59,6 +63,38 @@ The library also includes the following compactor classes:
 - `Phine\Compact\Json` &mdash; For compacting JSON files.
 - `Phine\Compact\Php` &mdash; For compacting PHP files.
 - `Phine\Compact\Xml` &mdash; For compacting XML files.
+
+### Creating a Compactor
+
+The library includes an interface that all bundled classes implement. An
+abstract class is also included, which all bundled compactor classes extend.
+When you create your own compactor class, you will want to extend the
+`Phine\Compact\AbstractCompact` class.
+
+```php
+use Phine\Compact\AbstractCompact;
+
+/**
+ * Simply trims all lines.
+ */
+class Trim extends AbstractCompact
+{
+    /**
+     * {@inheritDoc}
+     */
+    public function compactContents($contents)
+    {
+        $contents = preg_replace('/^\s+/m', '', $contents);
+        $contents = preg_replace('/\s+$/m', '', $contents);
+
+        return $contents;
+    }
+}
+```
+
+When extending the `AbstractCompact` class, the `compactFile()` method will
+already be implemented for you. It will rely on the `compactContents()` method
+to compact the contents after it has been read from the file.
 
 Documentation
 -------------
