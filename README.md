@@ -96,6 +96,8 @@ When extending the `AbstractCompact` class, the `compactFile()` method will
 already be implemented for you. It will rely on the `compactContents()` method
 to compact the contents after it has been read from the file.
 
+> Please considering adding your compactor class to [the wiki][].
+
 Documentation
 -------------
 
@@ -114,4 +116,5 @@ This library is available under the [MIT license](LICENSE).
 [Phine Observer]: https://github.com/phine/lib-observer
 [Phine Path]: https://github.com/phine/lib-path
 [Composer]: http://getcomposer.org/
+[the wiki]: https://github.com/phine/lib-compact/wiki
 [documentation here]: http://phine.github.io/lib-compact
