@@ -98,6 +98,33 @@ to compact the contents after it has been read from the file.
 
 > Please considering adding your compactor class to [the wiki][].
 
+### Collections
+
+If you need to manage multiple compactors, the library offers a `Collection`
+class. In addition to the class, an interface is provided so that different
+implementations can be supported.
+
+```php
+use Phine\Compact\Collection;
+use Phine\Compact\Json;
+use Phine\Compact\Php;
+use Phine\Compact\Xml;
+
+$collection = new Collection();
+$collection->addCompactor(new Json());
+$collection->addCompactor(new Php());
+$collection->addCompactor(new Xml());
+
+$json = <<<JSON
+{
+    "key": "value"
+}
+JSON;
+
+echo $collection->getCompactor('json')->compactContents($json);
+// {"key":"value"}
+```
+
 Documentation
 -------------
 
